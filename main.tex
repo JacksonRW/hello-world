@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{indentfirst}
+
+\title{Tidal Locking and the Roche Limit}
+\author{Jackson White}
+\date{PHYS 416 Proposal}
+
+\begin{document}
+\twocolumn
+
+\maketitle
+
+\section{Overview and Significance}
+
+
+\begin{center}
+ \begin{tabular}{||c | c ||} 
+ \hline
+ Acronym & Full Name \\ [0.5ex] 
+ \hline\hline
+ BSL & Bright Surge on Limb \\
+ \hline
+ DSF & Filament Disappearance \\ 
+ \hline
+    EPL & Eruptive Prominence on Limb\\
+ \hline
+    FIL & Filament\\
+ \hline
+    FLA & Optical Flare in H-Alpha\\
+ \hline
+    FOR & Forbush Decrease (CR Decrease) \\
+ \hline
+    GLE & Ground-Level Event (CR Increase) \\
+ \hline
+    LPS & Loop Prominence System\\
+ \hline
+    PCA & Polar Cap Absorption\\
+ \hline
+    RBR & Fixed-Frequency Radio Burst\\
+ \hline
+    RNS & Radio Noise Storm\\
+ \hline
+    RSP & Sweep-Frequency Radio Burst\\
+ \hline
+    SPY & Spray\\
+ \hline
+    XRA & X-ray Event \\
+ \hline
+\end{tabular}
+\end{center}
+
+
+In my final project for PHYS 416, I propose to study the physics of tidal locking between orbiting astrophysical objects. Tidal locking occurs when orbiting bodies distort each other, and then exert torques on each corresponding body when the distortions become unaligned. The primary challenge in this project will be to successfully model accurate gravitational distortion, the evolution of those distortions as the planetary bodies rotate separately and orbit one another, and the corresponding gravitational torques caused due to those distortions, using n-body simulations. 
+
+A straightforward example of tidal locking is that of a small moon closely orbiting a much heavier planet in an approximately circular orbit, such as our moon, in which case a simulation of such a system should show the moon gradually becoming tidally locked such that the same face is always oriented towards the planet. However, variations in the eccentricity of the orbits, the number of bodies, the strength of the tidal effects, and the inclination of the orbits relative to the axes of rotation can lead to more interesting outcomes. The scenarios I would like to investigate with this project include those where orbiting bodies can become locked into spin-orbit resonances other than 1:1, such as Mercury orbiting the Sun, and the effect of eccentricity pumping, where the eccentricity of an orbiting body can be significantly altered by tidal effects.
+
+Additionally, because I begin by using n-body simulations, an interesting extension of these simulations will be to model orbiting body break-ups, as orbiting bodies fall in and reach the Roche Limit for their system. In some simulations I plan to introduce an artificial drag so that the orbiting bodies will gradually fall in and eventually become torn apart by tidal forces, in the hopes of simulating ring formation, and showing how factors such as rotation speed influence where the effective Roche limit is located for a given system.  
+
+\section{Numerical Tools and Equations}
+For this project I plan to start by modifying the n-body adaptive runge-kutta simulation created in Chapter 3. I will simulate each gravitational body as a collection of massive colliding particles in order to more easily model minor and gradually evolving deformations in each gravitational body.
+
+A primary challenge for this project will be modelling each gravitational body so that they can deform under differential gravitational forces, while still maintaining a relatively rigid structure such that rotations are well defined and the body is generally stable when not under the influence of significant outside force.  
+
+I plan to begin with 2-dimensions simulations, and progress to 3-Dimensional simulations based on the success and time constraints of the 2-dimensional runs. 
+
+
+\section{Validation, Testing, and Documentation}
+One illustrative way to test my results will be to compare my simulations with real world examples. Using initial parameters comparable to the Earth-Moon system, or Sun-Mercury system, I can test whether my resulting tidal locking time-scales and spin-orbit resonances are similar to what we see in our own solar system. 
+
+Another useful test of my project will be to compare the radii at which my orbiting bodies break apart due to tidal forces to those estimated by rigid and fluid satellite calculations of the Roche Limit. 
+
+A critical physical test of my results will be not only demonstrating conservation of energy throughout my simulations, but most importantly conservation of angular momentum. A successful result will show my simulated bodies gaining or losing angular momentum in step with the rest of the bodies in each simulation, so that total angular momentum remains constant throughout. 
+
+\end{document}
